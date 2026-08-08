@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smoky Coffee & More - Premium Indian Coffee House. Handcrafted coffee, delicious food, fresh desserts, and an unforgettable cozy ambience. Reserve your seat today.">
+    <title>Smoky Coffee & More | Premium Indian Coffee House</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Floating Coffee Beans Background Elements -->
+    <div class="floating-beans-container" aria-hidden="true">
+        <div class="floating-bean bean-1">☕</div>
+        <div class="floating-bean bean-2">🤎</div>
+        <div class="floating-bean bean-3">☕</div>
+        <div class="floating-bean bean-4">🤎</div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-text">Smoky Coffee <span class="logo-sub">& More</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#ambience" class="nav-link">Ambience</a>
+                <a href="#loyalty" class="nav-link">Loyalty</a>
+                <a href="#events" class="nav-link">Events & Offers</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#reservation" class="btn btn-secondary nav-reserve-btn">Reserve</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Open shopping cart">
+                    <svg class="cart-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                        <path fill="currentColor" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    <span class="cart-badge hidden" id="cartBadge">0</span>
+                </button>
+                <a href="#reservation" class="btn btn-gold header-cta">Reserve a Table</a>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Action Bar -->
+    <section class="top-action-bar">
+        <div class="container action-bar-container">
+            <button class="action-item active" data-service="dine-in">
+                <svg class="action-icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm8-3h-3v14h3V6zm-3-4v3h3V2h-3z"/>
+                </svg>
+                <span class="action-label">Dine In</span>
+            </button>
+            <button class="action-item" data-service="takeaway">
+                <svg class="action-icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M17 5H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm-4 14H5v-2h8v2zm0-4H5v-2h8v2zm0-4H5V9h8v2zm6-4h-2V3a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v2H5V3a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v2h2a3 3 0 0 1 3 3v13a1 1 0 0 1-2 0V7z"/>
+                </svg>
+                <span class="action-label">Takeaway</span>
+            </button>
+            <button class="action-item" data-service="online">
+                <svg class="action-icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M19 13v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6H3V9l1-5h16l1 5v4h-2zM5 5l-.6 3h15.2l-.6-3H5zm2 14h10v-6H7v6zm2-4h6v2H9v-2z"/>
+                </svg>
+                <span class="action-label">Order Online</span>
+            </button>
+            <button class="action-item" data-service="reserve">
+                <svg class="action-icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-5-8h-4v4h4v-4z"/>
+                </svg>
+                <span class="action-label">Reserve a Table</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-background">
+            <img src="assets/hero_coffee.png" alt="Smoky Coffee background showing premium espresso brewing" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg class="badge-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="currentColor" d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+                    </svg>
+                    <span>Premium Single Origin Indian Beans</span>
+                </div>
+                <h1 class="hero-title">Har Cup,<br><span class="highlight">Ek Yaad.</span></h1>
+                <p class="hero-subtitle">Handcrafted coffee, delicious food, fresh desserts aur unforgettable ambience.</p>
+                <div class="hero-actions-btns">
+                    <a href="#reservation" class="btn btn-gold btn-large">Reserve Your Seat</a>
+                    <a href="#menu" class="btn btn-outline btn-large">View Menu</a>
+                </div>
+                <div class="hero-trust">
+                    <div class="rating-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="rating-text">4.8+ Rating</span>
+                    </div>
+                    <span class="separator">|</span>
+                    <span class="happy-customers">15,000+ Happy Customers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bestsellers Section -->
+    <section class="bestsellers-section" id="bestsellers">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Handcrafted Favorites</span>
+                <h2 class="section-title">The Smoky Bestsellers</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="bestsellers-grid">
+                <!-- Card 1: Spanish Latte -->
+                <div class="bestseller-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=600" alt="Spanish Latte" class="card-img">
+                        <span class="card-tag">Signature</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Spanish Latte</h3>
+                        <p class="card-desc">Rich espresso combined with sweetened condensed milk and steamed milk for a creamy, sweet finish.</p>
+                        <div class="card-footer">
+                            <span class="card-price">₹285</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Spanish Latte" data-price="285">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Hazelnut Latte -->
+                <div class="bestseller-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=600" alt="Hazelnut Latte" class="card-img">
+                        <span class="card-tag">Classic</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Hazelnut Latte</h3>
+                        <p class="card-desc">Smooth espresso with toasted hazelnut syrup, steamed milk, and a delicate layer of microfoam.</p>
+                        <div class="card-footer">
+                            <span class="card-price">₹275</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Hazelnut Latte" data-price="275">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Caramel Macchiato -->
+                <div class="bestseller-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=600" alt="Caramel Macchiato" class="card-img">
+                        <span class="card-tag">Popular</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Caramel Macchiato</h3>
+                        <p class="card-desc">Freshly steamed milk with vanilla-flavored syrup, marked with espresso and drizzled with caramel.</p>
+                        <div class="card-footer">
+                            <span class="card-price">₹295</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Caramel Macchiato" data-price="295">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Cold Brew -->
+                <div class="bestseller-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=600" alt="Cold Brew" class="card-img">
+                        <span class="card-tag">Brewed</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Cold Brew</h3>
+                        <p class="card-desc">Slow-steeped for 18 hours in cold filtered water. Smooth, low in acidity, and highly caffeinated.</p>
+                        <div class="card-footer">
+                            <span class="card-price">₹245</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Cold Brew" data-price="245">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Mocha -->
+                <div class="bestseller-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&q=80&w=600" alt="Mocha" class="card-img">
+                        <span class="card-tag">Comfort</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Mocha</h3>
+                        <p class="card-desc">Espresso blended with premium dark chocolate sauce and steamed milk, topped with whipped cream.</p>
+                        <div class="card-footer">
+                            <span class="card-price">₹290</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Mocha" data-price="290">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Tiramisu -->
+                <div class="bestseller-card">
+                    <div class="card-img-wrapper">
+                        <img src="assets/tiramisu_dessert.png" alt="Smoky Tiramisu" class="card-img">
+                        <span class="card-tag">Chef Special</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Tiramisu</h3>
+                        <p class="card-desc">House-made classic Italian dessert with layers of espresso-soaked ladyfingers and whipped mascarpone.</p>
+                        <div class="card-footer">
+                            <span class="card-price">₹360</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Tiramisu" data-price="360">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Chocolate Croissant -->
+                <div class="bestseller-card">
+                    <div class="card-img-wrapper">
+                        <img src="assets/chocolate_croissant.png" alt="Chocolate Croissant" class="card-img">
+                        <span class="card-tag">Freshly Baked</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Chocolate Croissant</h3>
+                        <p class="card-desc">Buttery, flaky, golden pastry filled and drizzled with premium imported dark chocolate.</p>
+                        <div class="card-footer">
+                            <span class="card-price">₹195</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Chocolate Croissant" data-price="195">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Red Velvet Cake -->
+                <div class="bestseller-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&q=80&w=600" alt="Red Velvet Cake" class="card-img">
+                        <span class="card-tag">Indulgence</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Red Velvet Cake</h3>
+                        <p class="card-desc">Rich red velvet sponge cake layered with luxurious vanilla cream cheese frosting.</p>
+                        <div class="card-footer">
+                            <span class="card-price">₹280</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Red Velvet Cake" data-price="280">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Exquisite Offerings</span>
+                <h2 class="section-title">The Curated Menu</h2>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="menu-tabs">
+                <button class="menu-tab-btn active" data-category="coffee">☕ Coffee</button>
+                <button class="menu-tab-btn" data-category="cold-coffee">🧊 Cold Coffee</button>
+                <button class="menu-tab-btn" data-category="desserts">🍰 Desserts</button>
+                <button class="menu-tab-btn" data-category="bakery">🥐 Bakery</button>
+                <button class="menu-tab-btn" data-category="food">🍔 Food</button>
+                <button class="menu-tab-btn" data-category="drinks">🥤 Drinks</button>
+            </div>
+
+            <!-- Menu Content Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Coffee Items (Category: coffee) -->
+                <div class="menu-item-card" data-category="coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?auto=format&fit=crop&q=80&w=600" alt="Espresso" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Espresso</h4>
+                        </div>
+                        <p class="menu-item-desc">A rich, concentrated shot of our signature roasted single-origin espresso beans.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹145</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Espresso" data-price="145">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card" data-category="coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=600" alt="Americano" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Americano</h4>
+                        </div>
+                        <p class="menu-item-desc">Espresso shots topped with hot water, yielding a light layer of crema and deep profile.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹185</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Americano" data-price="185">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card" data-category="coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&q=80&w=600" alt="Cappuccino" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cappuccino</h4>
+                        </div>
+                        <p class="menu-item-desc">Balanced proportions of dark espresso, steamed milk, and rich velvet foam.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹225</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Cappuccino" data-price="225">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card" data-category="coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=400" alt="Latte" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Latte</h4>
+                        </div>
+                        <p class="menu-item-desc">A double shot of espresso topped with a generous pour of steamed milk and fine foam.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹245</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Latte" data-price="245">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card" data-category="coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=600" alt="Flat White" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Flat White</h4>
+                        </div>
+                        <p class="menu-item-desc">Intense ristretto shots with steamed whole milk, forming a thin layer of microfoam.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹255</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Flat White" data-price="255">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card" data-category="coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&q=80&w=400" alt="Mocha" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Mocha</h4>
+                        </div>
+                        <p class="menu-item-desc">Espresso blended with premium dark chocolate sauce and steamed milk, topped with whipped cream.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹290</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Mocha" data-price="290">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card" data-category="coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=400" alt="Macchiato" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Macchiato</h4>
+                        </div>
+                        <p class="menu-item-desc">A classic double espresso marked with a small dollop of textured warm milk foam.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹210</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Macchiato" data-price="210">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cold Coffee Items (Category: cold-coffee) -->
+                <div class="menu-item-card hidden" data-category="cold-coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=400" alt="Cold Brew" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cold Brew</h4>
+                        </div>
+                        <p class="menu-item-desc">Slow-steeped for 18 hours in cold filtered water. Smooth, low in acidity, and highly caffeinated.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹245</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Cold Brew" data-price="245">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="cold-coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&q=80&w=600" alt="Iced Latte" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Iced Latte</h4>
+                        </div>
+                        <p class="menu-item-desc">Double espresso shot poured over ice cubes, filled up with cold fresh milk.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹265</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Iced Latte" data-price="265">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="cold-coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=600" alt="Iced Mocha" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Iced Mocha</h4>
+                        </div>
+                        <p class="menu-item-desc">Chilled espresso mixed with rich chocolate syrup, fresh milk, and ice, topped with cream.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹295</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Iced Mocha" data-price="295">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="cold-coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=400" alt="Frappe" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Frappe</h4>
+                        </div>
+                        <p class="menu-item-desc">A rich blend of espresso, vanilla ice-cream, cold milk, and crushed ice.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹280</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Frappe" data-price="280">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="cold-coffee">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=400" alt="Caramel Frappe" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Caramel Frappe</h4>
+                        </div>
+                        <p class="menu-item-desc">Our signature frappe infused with premium buttery caramel sauce and whipped cream topping.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹310</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Caramel Frappe" data-price="310">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert Items (Category: desserts) -->
+                <div class="menu-item-card hidden" data-category="desserts">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&q=80&w=400" alt="Tiramisu" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Tiramisu</h4>
+                        </div>
+                        <p class="menu-item-desc">House-made classic Italian dessert with layers of espresso-soaked ladyfingers and whipped mascarpone.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹360</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Tiramisu" data-price="360">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="desserts">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&q=80&w=600" alt="New York Cheesecake" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">New York Cheesecake</h4>
+                        </div>
+                        <p class="menu-item-desc">Rich, dense, and creamy cheesecake over a sweet graham cracker crust base.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹320</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="New York Cheesecake" data-price="320">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="desserts">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=600" alt="Fudge Brownie" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Fudge Brownie</h4>
+                        </div>
+                        <p class="menu-item-desc">Decadent chocolate brownie with a fudgy center and chocolate chips, served warm.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹180</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Fudge Brownie" data-price="180">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="desserts">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=400" alt="Chocolate Lava Cake" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chocolate Lava Cake</h4>
+                        </div>
+                        <p class="menu-item-desc">Warm chocolate cake with a gooey, molten chocolate center, served with vanilla scoop.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹210</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Chocolate Lava Cake" data-price="210">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="desserts">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&q=80&w=400" alt="Red Velvet Cake" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Red Velvet Cake</h4>
+                        </div>
+                        <p class="menu-item-desc">Rich red velvet sponge cake layered with luxurious vanilla cream cheese frosting.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹280</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Red Velvet Cake" data-price="280">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bakery Items (Category: bakery) -->
+                <div class="menu-item-card hidden" data-category="bakery">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=600" alt="Classic Butter Croissant" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Classic Butter Croissant</h4>
+                        </div>
+                        <p class="menu-item-desc">Traditional French pastry made with pure butter, featuring a crisp exterior and airy layers.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹165</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Classic Butter Croissant" data-price="165">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="bakery">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=600" alt="Chocolate Croissant" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chocolate Croissant</h4>
+                        </div>
+                        <p class="menu-item-desc">Buttery, flaky, golden pastry filled and drizzled with premium imported dark chocolate.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹195</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Chocolate Croissant" data-price="195">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="bakery">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600" alt="Blueberry Muffin" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Blueberry Muffin</h4>
+                        </div>
+                        <p class="menu-item-desc">Moist muffin baked with plump fresh blueberries and topped with sugar streusel.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹150</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Blueberry Muffin" data-price="150">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="bakery">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=600" alt="Cinnamon Roll" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cinnamon Roll</h4>
+                        </div>
+                        <p class="menu-item-desc">Soft, warm yeast roll swirled with cinnamon brown sugar, glazed with cream cheese frosting.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹175</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Cinnamon Roll" data-price="175">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="bakery">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&q=80&w=600" alt="Chocochip Cookies" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chocochip Cookies</h4>
+                        </div>
+                        <p class="menu-item-desc">Large, freshly baked cookie loaded with melting Belgian dark chocolate chips.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹120</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Chocochip Cookies" data-price="120">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food Items (Category: food) -->
+                <div class="menu-item-card hidden" data-category="food">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=600" alt="Pesto & Mozzarella Sandwich" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pesto & Mozzarella Sandwich</h4>
+                        </div>
+                        <p class="menu-item-desc">Grilled sourdough filled with fresh basil pesto, buffalo mozzarella, and juicy vine-ripened tomatoes.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹320</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Pesto & Mozzarella Sandwich" data-price="320">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="food">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&q=80&w=600" alt="The Smoky Burger" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">The Smoky Burger</h4>
+                        </div>
+                        <p class="menu-item-desc">Char-grilled patty with smoked cheese, caramelized onions, house sauce, in a toasted brioche bun.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹365</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="The Smoky Burger" data-price="365">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="food">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&q=80&w=400" alt="Truffle Mushroom Pasta" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Truffle Mushroom Pasta</h4>
+                        </div>
+                        <p class="menu-item-desc">Penne pasta tossed in a creamy parmesan sauce infused with wild forest mushrooms and truffle oil.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹395</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Truffle Mushroom Pasta" data-price="395">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="food">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600" alt="Margherita Flatbread Pizza" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Margherita Flatbread Pizza</h4>
+                        </div>
+                        <p class="menu-item-desc">Thin crispy crust topped with slow-cooked marinara sauce, fresh basil, and fresh mozzarella cheese.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹380</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Margherita Flatbread Pizza" data-price="380">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="food">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600" alt="Avocado & Feta Salad" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Avocado & Feta Salad</h4>
+                        </div>
+                        <p class="menu-item-desc">Organic mixed greens with fresh avocado slices, crumbled feta cheese, cherry tomatoes, and lemon vinaigrette.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹340</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Avocado & Feta Salad" data-price="340">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks Items (Category: drinks) -->
+                <div class="menu-item-card hidden" data-category="drinks">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&q=80&w=600" alt="Premium Hot Chocolate" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Premium Hot Chocolate</h4>
+                        </div>
+                        <p class="menu-item-desc">Decadent melted Belgian chocolate whisked with warm milk, topped with toasted marshmallows.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹260</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Premium Hot Chocolate" data-price="260">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="drinks">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=600" alt="Ceremonial Matcha Latte" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Ceremonial Matcha Latte</h4>
+                        </div>
+                        <p class="menu-item-desc">Stone-ground Japanese matcha whisked with warm milk, offering a vibrant, smooth, earthy profile.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹280</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Ceremonial Matcha Latte" data-price="280">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="drinks">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&q=80&w=600" alt="Cold Pressed Juices" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cold Pressed Juices</h4>
+                        </div>
+                        <p class="menu-item-desc">Choose between Valencia Orange or fresh Watermelon & Mint juices pressed daily.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹210</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Cold Pressed Juices" data-price="210">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="drinks">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&q=80&w=600" alt="Cucumber Mint Cooler" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cucumber Mint Cooler</h4>
+                        </div>
+                        <p class="menu-item-desc">Refreshing mocktail with muddled cucumber, fresh mint leaves, lime juice, and carbonated soda.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹230</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Cucumber Mint Cooler" data-price="230">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card hidden" data-category="drinks">
+                    <div class="menu-item-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=400" alt="Classic Chocolate Milkshake" class="menu-item-img">
+                    </div>
+                    <div class="menu-item-details">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Classic Chocolate Milkshake</h4>
+                        </div>
+                        <p class="menu-item-desc">Rich double-chocolate ice cream blended with cold milk, topped with cocoa dusting.</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">₹250</span>
+                            <button class="btn btn-small btn-gold quick-add-btn" data-item="Classic Chocolate Milkshake" data-price="250">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambience Gallery Section -->
+    <section class="ambience-section" id="ambience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Visual Experience</span>
+                <h2 class="section-title">The Smoky Space</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery Item 1: Cozy Seating -->
+                <div class="gallery-item">
+                    <img src="assets/cafe_interior.png" alt="Cozy seating area inside Smoky Coffee & More with soft velvet couches" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Cozy Seating</h4>
+                        <p class="gallery-desc">Plush sofas and warm, inviting corners.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 2: Warm Lighting -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&q=80&w=600" alt="Warm ambient drop lights" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Warm Lighting</h4>
+                        <p class="gallery-desc">Intimate glow tailored for long conversations.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 3: Coffee Bar -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&q=80&w=600" alt="Sleek modern coffee espresso bar" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">The Coffee Bar</h4>
+                        <p class="gallery-desc">Watch our skilled baristas craft liquid gold.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 4: Work-Friendly Corners -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&w=600" alt="Quiet study desk with laptop and coffee" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Work-Friendly Corners</h4>
+                        <p class="gallery-desc">High-speed internet, power points, and quiet zones.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 5: Indoor Aesthetic Seating -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=600" alt="Aesthetic lounge area" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Aesthetic Lounges</h4>
+                        <p class="gallery-desc">Every corner designed to capture a memory.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 6: Premium Interiors -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=600" alt="Premium luxury cafe interior" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Luxury Interiors</h4>
+                        <p class="gallery-desc">Fine architectural design meeting heritage motifs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us-section" id="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Standards</span>
+                <h2 class="section-title">Why Smoky Coffee & More</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        ☕
+                    </div>
+                    <h3 class="feature-title">Premium Coffee Beans</h3>
+                    <p class="feature-desc">100% Arabica, hand-selected single-origin beans sourced sustainably from Coorg and Chikmagalur.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        👨‍🍳
+                    </div>
+                    <h3 class="feature-title">Skilled Baristas</h3>
+                    <p class="feature-desc">Our certified coffee craftsmen masterfully control roast profiles, grinds, and extraction.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        🛋️
+                    </div>
+                    <h3 class="feature-title">Cozy Ambience</h3>
+                    <p class="feature-desc">Plush seating, warm lighting, and a soothing acoustic selection tailored for ultimate comfort.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        📶
+                    </div>
+                    <h3 class="feature-title">Free High-Speed WiFi</h3>
+                    <p class="feature-desc">Gigabit fiber internet ensures you stay connected seamlessly for work or streaming.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        🔌
+                    </div>
+                    <h3 class="feature-title">Charging Points</h3>
+                    <p class="feature-desc">Abundant power outlets positioned at every table to keep your laptops and phones charged.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        🌿
+                    </div>
+                    <h3 class="feature-title">Outdoor Seating</h3>
+                    <p class="feature-desc">A gorgeous open-air courtyard terrace surrounded by lush greenery and cool mist fans.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        ⚡
+                    </div>
+                    <h3 class="feature-title">Fast Service</h3>
+                    <p class="feature-desc">Attentive, friendly tableside staff and streamlined ordering to save your precious time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        🍊
+                    </div>
+                    <h3 class="feature-title">Fresh Ingredients</h3>
+                    <p class="feature-desc">All bakery and food items are prepared in-house daily with organic, local produce.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Loyalty Program Section -->
+    <section class="loyalty-section" id="loyalty">
+        <div class="container loyalty-container">
+            <div class="loyalty-text-content">
+                <div class="section-header align-left">
+                    <span class="section-subtitle">Loyalty Program</span>
+                    <h2 class="section-title">Buy 9 Coffees, Get the 10th Free</h2>
+                    <div class="divider"></div>
+                </div>
+                <p class="loyalty-desc">At Smoky Coffee & More, we believe every cup should lead to a reward. Join our Smoky Circle today. Claim your stamps with every purchase of handcrafted beverages.</p>
+                <div class="loyalty-instructions">
+                    <div class="instruction-step">
+                        <span class="step-num">1</span>
+                        <p>Purchase any hot or cold coffee from our menu.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <span class="step-num">2</span>
+                        <p>Get your server to stamp your Smoky Circle digital card.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <span class="step-num">3</span>
+                        <p>Your 10th cup is on us! Enjoy any beverage of your choice.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Stamp Card Card Visual -->
+            <div class="loyalty-card-wrapper">
+                <div class="loyalty-card">
+                    <div class="card-brand">
+                        <span class="brand-name">Smoky Circle</span>
+                        <span class="card-type">Loyalty Stamp Card</span>
+                    </div>
+                    <div class="stamps-grid" id="stampsGrid">
+                        <!-- 10 stamp positions. First few stamped by default as a preview. Interactive clicking. -->
+                        <div class="stamp-circle stamped" data-index="1">
+                            <span class="stamp-mark">☕</span>
+                        </div>
+                        <div class="stamp-circle stamped" data-index="2">
+                            <span class="stamp-mark">☕</span>
+                        </div>
+                        <div class="stamp-circle stamped" data-index="3">
+                            <span class="stamp-mark">☕</span>
+                        </div>
+                        <div class="stamp-circle" data-index="4">
+                            <span class="stamp-mark"></span>
+                        </div>
+                        <div class="stamp-circle" data-index="5">
+                            <span class="stamp-mark"></span>
+                        </div>
+                        <div class="stamp-circle" data-index="6">
+                            <span class="stamp-mark"></span>
+                        </div>
+                        <div class="stamp-circle" data-index="7">
+                            <span class="stamp-mark"></span>
+                        </div>
+                        <div class="stamp-circle" data-index="8">
+                            <span class="stamp-mark"></span>
+                        </div>
+                        <div class="stamp-circle" data-index="9">
+                            <span class="stamp-mark"></span>
+                        </div>
+                        <div class="stamp-circle reward" data-index="10">
+                            <span class="stamp-mark">🎁</span>
+                        </div>
+                    </div>
+                    <div class="card-footer-info">
+                        <span id="stampsStatus">3 of 9 stamps collected.</span>
+                        <button class="btn btn-small btn-outline-gold" id="btnSimulateStamp">Tap to Add Stamp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events & Special Offers Section -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Happening at Smoky</span>
+                <h2 class="section-title">Events & Special Offers</h2>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Tab Switcher for Events / Offers -->
+            <div class="events-toggle-tabs">
+                <button class="toggle-tab-btn active" id="toggleEventsBtn">Weekly Events</button>
+                <button class="toggle-tab-btn" id="toggleOffersBtn">Exclusive Offers</button>
+            </div>
+
+            <!-- Events Grid -->
+            <div class="events-content-container" id="eventsContent">
+                <!-- Events Tab Content -->
+                <div class="events-grid-view active-view" id="eventsGrid">
+                    <!-- Live Music Nights -->
+                    <div class="event-card">
+                        <div class="event-header">
+                            <span class="event-tag">Every Friday</span>
+                            <span class="event-time">8:00 PM onwards</span>
+                        </div>
+                        <h4 class="event-title">Sufi & Acoustic Live Music</h4>
+                        <p class="event-desc">Unwind your week with live acoustic performance by local musicians playing soothing melodies.</p>
+                        <button class="btn btn-outline btn-small event-register-btn" data-event="Sufi & Acoustic Live Music" data-price="499">Join Event</button>
+                    </div>
+
+                    <!-- Open Mic Evenings -->
+                    <div class="event-card">
+                        <div class="event-header">
+                            <span class="event-tag">Every Wednesday</span>
+                            <span class="event-time">7:00 PM onwards</span>
+                        </div>
+                        <h4 class="event-title">Unfiltered Open Mic Night</h4>
+                        <p class="event-desc">Poetry, stand-up comedy, and acoustic music. Share your talent or sit back and enjoy raw artistry.</p>
+                        <button class="btn btn-outline btn-small event-register-btn" data-event="Unfiltered Open Mic Night" data-price="299">Join Event</button>
+                    </div>
+
+                    <!-- Coffee Tasting Workshops -->
+                    <div class="event-card">
+                        <div class="event-header">
+                            <span class="event-tag">Alternative Saturdays</span>
+                            <span class="event-time">11:00 AM - 1:00 PM</span>
+                        </div>
+                        <h4 class="event-title">Art of Espresso & Pour-Over</h4>
+                        <p class="event-desc">A guided workshop by our Head Barista. Learn the art of extraction, tasting notes, and latte art.</p>
+                        <button class="btn btn-outline btn-small event-register-btn" data-event="Art of Espresso & Pour-Over" data-price="899">Join Event</button>
+                    </div>
+
+                    <!-- Book Club Meetups -->
+                    <div class="event-card">
+                        <div class="event-header">
+                            <span class="event-tag">First Sunday of Month</span>
+                            <span class="event-time">4:00 PM - 6:00 PM</span>
+                        </div>
+                        <h4 class="event-title">Chapters & Coffee Meetup</h4>
+                        <p class="event-desc">Join local book lovers for coffee-infused discussions. Discussing classic Indian literature this month.</p>
+                        <button class="btn btn-outline btn-small event-register-btn" data-event="Chapters & Coffee Meetup" data-price="199">Join Event</button>
+                    </div>
+                </div>
+
+                <!-- Offers Tab Content -->
+                <div class="offers-grid-view hidden-view" id="offersGrid">
+                    <!-- Student Discount -->
+                    <div class="offer-card">
+                        <div class="offer-badge">15% OFF</div>
+                        <h4 class="offer-title">Student Discount</h4>
+                        <p class="offer-desc">Flash your university ID card and grab 15% discount on all food and beverage bills.</p>
+                        <span class="offer-validity">Valid: Mon to Thu, All Day</span>
+                    </div>
+
+                    <!-- Happy Hours -->
+                    <div class="offer-card">
+                        <div class="offer-badge">Buy 1 Get 1</div>
+                        <h4 class="offer-title">Happy Hour Coffees</h4>
+                        <p class="offer-desc">Buy any hot handcrafted beverage and get another free. Perfect for a caffeine companion.</p>
+                        <span class="offer-validity">Valid: Weekdays, 4 PM to 7 PM</span>
+                    </div>
+
+                    <!-- Weekend Specials -->
+                    <div class="offer-card">
+                        <div class="offer-badge">Free Dessert</div>
+                        <h4 class="offer-title">Weekend Dinner Special</h4>
+                        <p class="offer-desc">Order any two main items from our Food menu and get a complimentary slice of Red Velvet cake.</p>
+                        <span class="offer-validity">Valid: Fri to Sun, 8 PM onwards</span>
+                    </div>
+
+                    <!-- Seasonal Drinks -->
+                    <div class="offer-card">
+                        <div class="offer-badge">Seasonal</div>
+                        <h4 class="offer-title">Mango Coconut Cold Brew</h4>
+                        <p class="offer-desc">Try our summer special cold brew layered with coconut water and organic Alphanso mango puree.</p>
+                        <span class="offer-validity">Valid: Limited Time Only</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Real Testimonials</span>
+                <h2 class="section-title">Loved by Coffee Enthusiasts</h2>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Review Carousel -->
+            <div class="reviews-carousel-wrapper">
+                <div class="reviews-carousel" id="reviewsCarousel">
+                    
+                    <!-- Review 1 -->
+                    <div class="review-slide active-slide">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">"Smoky Coffee has easily become my second home. Their Spanish Latte is perfectly balanced, and the Tiramisu is out of this world! The soft seating and quiet work corners are exactly what I need for a productive remote workday."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">AA</div>
+                            <div class="author-info">
+                                <h5 class="author-name">Ananya Acharya</h5>
+                                <span class="author-role">Regular Patron, Bangalore</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-slide">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">"The Sufi music nights on Friday are absolutely magical. Sipping their slow-steeped cold brew under those gorgeous warm lights is an experience in itself. Exceptional service and incredible attention to detail in every cup."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">RK</div>
+                            <div class="author-info">
+                                <h5 class="author-name">Rahul Kapoor</h5>
+                                <span class="author-role">Coffee Enthusiast, Delhi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-slide">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">"I am in love with their digital loyalty program and their buttery chocolate croissant. It is so hard to find high-quality croissants in the city, but their bakery section rivals top Parisian cafes. A must visit."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">MS</div>
+                            <div class="author-info">
+                                <h5 class="author-name">Meera Sen</h5>
+                                <span class="author-role">Food Blogger, Mumbai</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Controls -->
+                <div class="carousel-dots">
+                    <button class="dot active" data-slide="0"></button>
+                    <button class="dot" data-slide="1"></button>
+                    <button class="dot" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Reservation Section -->
+    <section class="reservation-section" id="reservation">
+        <div class="reservation-bg-img">
+            <img src="assets/cafe_interior.png" alt="Smoky Coffee premium lounge reservation background">
+            <div class="reservation-overlay"></div>
+        </div>
+        <div class="container reservation-container">
+            <div class="reservation-card-wrapper">
+                <div class="reservation-card">
+                    <div class="section-header align-left">
+                        <span class="section-subtitle">Secure Your Table</span>
+                        <h2 class="section-title">Reserve Your Seat</h2>
+                        <p class="section-desc">Skip the wait and enjoy your favorite coffee experience.</p>
+                        <div class="divider"></div>
+                    </div>
+
+                    <form class="booking-form" id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingName">Full Name</label>
+                                <input type="text" id="bookingName" class="form-input" placeholder="E.g., Rohan Sharma" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingPhone">Phone Number</label>
+                                <input type="tel" id="bookingPhone" class="form-input" placeholder="E.g., +91 98765 43210" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingDate">Date</label>
+                                <input type="date" id="bookingDate" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime">Preferred Time</label>
+                                <select id="bookingTime" class="form-input" required>
+                                    <option value="" disabled selected>Select time slot</option>
+                                    <option value="09:00 AM">09:00 AM - Breakfast</option>
+                                    <option value="11:00 AM">11:00 AM - Coffee Session</option>
+                                    <option value="01:00 PM">01:00 PM - Lunch</option>
+                                    <option value="03:00 PM">03:00 PM - Afternoon Chill</option>
+                                    <option value="05:00 PM">05:00 PM - Evening Live</option>
+                                    <option value="07:00 PM">07:00 PM - Dinner</option>
+                                    <option value="09:00 PM">09:00 PM - Night Brew</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingGuests">Guests</label>
+                                <select id="bookingGuests" class="form-input" required>
+                                    <option value="" disabled selected>No. of guests</option>
+                                    <option value="1 Guest">1 Guest (Solo Study)</option>
+                                    <option value="2 Guests">2 Guests (Couple/Meeting)</option>
+                                    <option value="3 Guests">3 Guests</option>
+                                    <option value="4 Guests">4 Guests (Family)</option>
+                                    <option value="5-6 Guests">5-6 Guests</option>
+                                    <option value="Group 7+">Group (7+ Guests)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group margin-top-20">
+                            <label for="bookingRequests">Special Requests (Optional)</label>
+                            <textarea id="bookingRequests" class="form-input" placeholder="Window table, quiet corner, wheelchair access, birthday special..." rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold btn-block btn-large">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section" id="instagram">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Follow Our Journey</span>
+                <h2 class="section-title">Instagram @SmokyCoffeeHouse</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="insta-grid">
+                <div class="insta-item">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=400" alt="Latte Art pour" class="insta-img">
+                    <div class="insta-hover-overlay">
+                        <span>❤️ 421  💬 18</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="assets/tiramisu_dessert.png" alt="Aesthetic tiramisu" class="insta-img">
+                    <div class="insta-hover-overlay">
+                        <span>❤️ 512  💬 32</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&q=80&w=400" alt="Premium coffee beans roasting" class="insta-img">
+                    <div class="insta-hover-overlay">
+                        <span>❤️ 389  💬 12</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="assets/chocolate_croissant.png" alt="Fresh croissant baker shot" class="insta-img">
+                    <div class="insta-hover-overlay">
+                        <span>❤️ 498  💬 28</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="assets/cafe_interior.png" alt="Interior cafe lounge" class="insta-img">
+                    <div class="insta-hover-overlay">
+                        <span>❤️ 612  💬 45</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&q=80&w=400" alt="Iced cold drinks" class="insta-img">
+                    <div class="insta-hover-overlay">
+                        <span>❤️ 415  💬 19</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info-block">
+                <div class="section-header align-left">
+                    <span class="section-subtitle">Get in Touch</span>
+                    <h2 class="section-title">Visit Our Sanctuary</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <div class="detail-icon">📍</div>
+                        <div class="detail-text">
+                            <h5>Our Location</h5>
+                            <p>Plot 42, 80 Feet Rd, Indiranagar, Bengaluru, Karnataka 560038, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="detail-icon">📞</div>
+                        <div class="detail-text">
+                            <h5>Phone & Reservations</h5>
+                            <p>+91 80 4912 3456 | +91 98860 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="detail-icon">✉️</div>
+                        <div class="detail-text">
+                            <h5>Email Address</h5>
+                            <p>namaste@smokycoffee.com | partner@smokycoffee.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links-wrapper">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styled Map Area -->
+            <div class="map-container">
+                <div class="map-header">
+                    <span class="map-indicator">● LIVE MAP</span>
+                    <h5>Indiranagar Sanctuary</h5>
+                </div>
+                <!-- Mock Map visual with clean styling or Google maps embed. We will use a fully styled dark premium iframe for realistic integration. -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.926521360636!2d77.6387063!3d12.976594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13f412ef1897%3A0x7d6784d1bc945952!2s80%20Feet%20Rd%2C%20Indiranagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        aria-label="Google Maps Location"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand-col">
+                <span class="logo-text font-large">Smoky Coffee</span>
+                <p class="footer-about">A premium Indian coffee house blending artisanal roasting techniques with rich cultural heritage. Experience luxury in every drop.</p>
+                <div class="footer-badge-mini">
+                    ☕ Specialty Coffee Association Member
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h5 class="footer-title">Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#menu">Our Menu</a></li>
+                    <li><a href="#ambience">The Space</a></li>
+                    <li><a href="#loyalty">Loyalty Card</a></li>
+                    <li><a href="#events">Events & Offers</a></li>
+                    <li><a href="#reservation">Reservations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-hours-col">
+                <h5 class="footer-title">Opening Hours</h5>
+                <ul class="footer-info-list">
+                    <li><span class="day">Monday - Thursday:</span> <span class="time">08:00 AM - 11:00 PM</span></li>
+                    <li><span class="day">Friday - Saturday:</span> <span class="time">08:00 AM - 01:00 AM</span></li>
+                    <li><span class="day">Sunday:</span> <span class="time">09:00 AM - 11:00 PM</span></li>
+                    <li class="notice">Kitchen closes 45 mins before closing.</li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-col">
+                <h5 class="footer-title">Reservations</h5>
+                <p>Have an event or a group booking?</p>
+                <a href="#reservation" class="btn btn-gold btn-small margin-top-10 display-inline">Book Table Now</a>
+                <p class="margin-top-15"><strong>Direct Line:</strong> +91 98860 12345</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p class="copyright">&copy; 2026 Smoky Coffee & More. All Rights Reserved. Crafted with care.</p>
+                <div class="footer-terms">
+                    <a href="#">Privacy Policy</a>
+                    <span class="dot-separator">•</span>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Side Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+        <div class="cart-drawer-header">
+            <h3 class="cart-drawer-title">Your Order</h3>
+            <button class="cart-drawer-close" id="cartDrawerClose" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-drawer-body" id="cartDrawerBody">
+            <div class="cart-empty-state" id="cartEmptyState">
+                <span class="cart-empty-icon">☕</span>
+                <p>Your cart is empty</p>
+                <span class="cart-empty-hint">Add items from our menu to get started</span>
+            </div>
+            <ul class="cart-items-list hidden" id="cartItemsList"></ul>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total</span>
+                <span class="cart-total-amount" id="cartTotalAmount">₹0</span>
+            </div>
+            <button class="btn btn-gold btn-block btn-large" id="cartCheckoutBtn" disabled>Proceed to Online Payment</button>
+        </div>
+    </aside>
+
+    <!-- Interactive Feedback Notification Modal -->
+    <div class="modal-backdrop" id="modalBackdrop">
+        <div class="modal-card">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close Modal">&times;</button>
+            <div class="modal-content" id="modalContent">
+                <!-- Success content injected via script -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Logic Script -->
+    <script src="script.js"></script>
+</body>
+</html>
